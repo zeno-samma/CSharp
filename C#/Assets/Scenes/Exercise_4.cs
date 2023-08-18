@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //--------Execise 
-public class Execise_4 : MonoBehaviour
+public class Exercise_4 : MonoBehaviour
 {
     // Start is called before the first frame update
     //Mang mot chieu
