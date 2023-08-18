@@ -6,11 +6,10 @@ using UnityEngine;
 public class Exercise_4 : MonoBehaviour
 {
     // Start is called before the first frame update
-    //Mang mot chieu
-    int[] ScoreArray1 = new int[] { 1, 2, 4, 2, 6, 1, 7, 8, 6, 5 };
+    int[] ScoreArray1 = new int[] { 1, 2, 4, 2, 6, 1, 7, 8, 6, 5 }; //Mang mot chieu
     string Show;
-    //Mang hai chieu
-    int[,] ScoreArray4 = new int[,]
+    
+    int[,] ScoreArray4 = new int[,]//Mang hai chieu
         {
               { 1, 2, 4, 2, 6, 1, 7, 8, 6, 5 },
               { 7, 3, 1, 9, 1, 8, 6, 10, 11, 17 },
@@ -36,23 +35,22 @@ public class Exercise_4 : MonoBehaviour
     }
     void FuncNon(ref int value)
     {
-        //Tim cac so chan, le in ra man hinh 
-        //Debug.Log($"Mang ScoreArray1: = {ScoreArray1}");
-        for (int i = 0; i < ScoreArray1.Length; i++)
+        
+        for (int i = 0; i < ScoreArray1.Length; i++)//Tim cac so chan, le in ra man hinh 
         {
 
             if (ScoreArray1[i] % 2 == 0)
             {
-                //Debug.Log("So chan");
-                Debug.Log($"So : {ScoreArray1[i]}, la so chan trong mang");
+                
+                Debug.Log($"So : {ScoreArray1[i]}, la so chan trong mang");//Debug.Log("So chan");
             }
             else
             {
                 Debug.Log($"So : {ScoreArray1[i]}, la so le trong mang");
             }
         }
-        //Tinh tong cac so trong mang in ra man hinh
-        for (int i = 0; i < ScoreArray1.Length; i++)
+        
+        for (int i = 0; i < ScoreArray1.Length; i++)//Tinh tong cac so trong mang in ra man hinh
         {
             value += ScoreArray1[i];
         }
@@ -61,16 +59,15 @@ public class Exercise_4 : MonoBehaviour
     }    
     void FuncNon_2(ref int value)
     {
-        //Tim cac so chan, le in ra man hinh 
-        //Debug.Log($"Mang ScoreArray1: = {ScoreArray1}");
-        for (int i = 0; i < ScoreArray4.GetLength(0); i++)
+        
+        for (int i = 0; i < ScoreArray4.GetLength(0); i++) //Tim cac so chan, le in ra man hinh
         {
             for (int j = 0; j < ScoreArray4.GetLength(1); j++)
             {
                 if (ScoreArray4[i,j] % 2 == 0)
                 {
-                    //Debug.Log("So chan");
-                    Debug.Log($"So : {ScoreArray4[i,j]}, la so chan trong mang");
+                    
+                    Debug.Log($"So : {ScoreArray4[i,j]}, la so chan trong mang");//Debug.Log("So chan");
                 }
                 else
                 {
@@ -79,8 +76,8 @@ public class Exercise_4 : MonoBehaviour
             }
 
         }
-        //Tinh tong cac so trong mang in ra man hinh
-        //for (int i = 0; i < ScoreArray1.Length; i++)
+
+        //for (int i = 0; i < ScoreArray1.Length; i++)//Tinh tong cac so trong mang in ra man hinh
         //{
         //    value += ScoreArray1[i];
         //}
@@ -89,8 +86,8 @@ public class Exercise_4 : MonoBehaviour
     }
     void FuncProduct(ref int value)
     {
-        //Tinh tich tat ca cac so in ra man hinh
-        for (int i = 0; i < ScoreArray1.Length; i++)
+        
+        for (int i = 0; i < ScoreArray1.Length; i++)//Tinh tich tat ca cac so in ra man hinh
         {
             value *= ScoreArray1[i];
         }
