@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //--------Execise 
-public class Execise_1 : MonoBehaviour
+public class Execise_4 : MonoBehaviour
 {
     // Start is called before the first frame update
     //Mang mot chieu
@@ -20,10 +20,11 @@ public class Execise_1 : MonoBehaviour
     void Start()
     {
         int sum = 0;
-        int product = 1;
-        ShowArray(ref Show);
-        FuncNon(ref sum);
-        FuncProduct(ref product);
+        //int product = 1;
+        //ShowArray(ref Show);
+        //FuncNon(ref sum);
+        //FuncProduct(ref product);
+        FuncNon_2(ref sum);
     }
     void ShowArray(ref string value)
     {
@@ -56,6 +57,34 @@ public class Execise_1 : MonoBehaviour
             value += ScoreArray1[i];
         }
         Debug.Log($"Tong cua day so la : {value}");
+
+    }    
+    void FuncNon_2(ref int value)
+    {
+        //Tim cac so chan, le in ra man hinh 
+        //Debug.Log($"Mang ScoreArray1: = {ScoreArray1}");
+        for (int i = 0; i < ScoreArray4.GetLength(0); i++)
+        {
+            for (int j = 0; j < ScoreArray4.GetLength(1); j++)
+            {
+                if (ScoreArray4[i,j] % 2 == 0)
+                {
+                    //Debug.Log("So chan");
+                    Debug.Log($"So : {ScoreArray4[i,j]}, la so chan trong mang");
+                }
+                else
+                {
+                    Debug.Log($"So : {ScoreArray4[i,j]}, la so le trong mang");
+                }
+            }
+
+        }
+        //Tinh tong cac so trong mang in ra man hinh
+        //for (int i = 0; i < ScoreArray1.Length; i++)
+        //{
+        //    value += ScoreArray1[i];
+        //}
+        //Debug.Log($"Tong cua day so la : {value}");
 
     }
     void FuncProduct(ref int value)
