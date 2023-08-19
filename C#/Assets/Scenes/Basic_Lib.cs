@@ -6,7 +6,12 @@ public class Basic_Lib : MonoBehaviour
 {
     public string s = "Xin chao the gioi";//Bien global
     const float DIEM_SO = 9.1f; //Khai bao hang se khong bi thay doi.
-
+    enum InfoPlayer//Danh sach liet ke chi kieu int
+    {
+        Name = 0,
+        Age = 10,
+        Sex = 0
+    }
     //// Start is called before the first frame update
     //void Start()
     //{
@@ -149,6 +154,8 @@ public class Basic_Lib : MonoBehaviour
         {
             Debug.Log($"Duyet mang Foreach: {temp}");
         }
+        //truy cap danh sach liet ke
+        Debug.Log($"{(int)InfoPlayer.Age}");
     }
     //---Func(Quan trong)---------------
     void LogString(int d = 2, string str = "Hello")//Neu khong gia tri tham so truyen vao se lay gia tri mac dinh, nhung gia tri mac dinh luon phai dat phia sau.
