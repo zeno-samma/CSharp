@@ -5,16 +5,16 @@ using UnityEngine;
 public class Exercise_3 : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
 
         for (int i = 0; i < 20; i++)
         {
-            vonglap();
+            Vonglap();
         }
     }
 
-    void vonglap() 
+    void Vonglap() 
     {
         Debug.Log("Day la vong lap");
     }

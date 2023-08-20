@@ -16,7 +16,8 @@ public class Exercise_4 : MonoBehaviour
               { 10, 21, 1, 3, 5, 9, 2, 4, 12, 18 }
         }
     ;
-    void Start()
+
+    private void Start()
     {
         int sum = 0;
         //int product = 1;

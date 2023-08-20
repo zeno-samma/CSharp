@@ -43,6 +43,7 @@ public class Basic_Lib : MonoBehaviour
               {9, 10}
             }
         ;
+
     //int c;
     //-------------------Boxing
     //int value = 109;
@@ -50,7 +51,7 @@ public class Basic_Lib : MonoBehaviour
     //int newvalue;
     //----------Logic-----------------
     //int a = 2; int b = 3;//Khai bao hang
-    void Start()
+    private void Start()
     {
         //--------Khoi tao bien------------
         a = 2;

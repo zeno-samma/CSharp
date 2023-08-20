@@ -6,8 +6,9 @@ public class Exercise_2 : MonoBehaviour
 {
     int a = 8;
     int b = 3;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         //Hieucua2so(a, b);
         Pheptinh(a, b, 5);
