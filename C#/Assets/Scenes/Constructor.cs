@@ -9,7 +9,7 @@ public class Constructor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Boss boss = new Boss(1);
+        Enemy boss = new Boss(1);
 
     }
     public class Enemy

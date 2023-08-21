@@ -11,6 +11,7 @@ public class Exercise_8 : MonoBehaviour
         //Enemy boss = new Boss();
         //boss.Move();
         Animal animal = new Cat(1);
+        
     }
     //========================Ly thuyet===============
     //public class Enemy//Cha
@@ -50,10 +51,10 @@ public class Exercise_8 : MonoBehaviour
         {
             Debug.Log("Method Move");
         }
-        //public void Eat()
-        //{
-        //    Debug.Log("Method Eat");
-        //}
+        public void Eat()
+        {
+            Debug.Log("Method Eat");
+        }
         public void Eat(float eatfood)
         {
             Debug.Log("Method EatFood");
