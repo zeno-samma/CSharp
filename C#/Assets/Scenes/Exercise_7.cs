@@ -32,15 +32,15 @@ public class Exercise_7: MonoBehaviour
         public float mamage;
         private int bonus;        
         //-------------------------------------Get & Set---------------------
-        public int Bonus
-        {
-            get{
-                return bonus;
-            }
-            set{
-                bonus = value+1;
-            }
-        }
+        public int Bonus { get; set;}
+        //{
+        //    get{
+        //        return bonus;
+        //    }
+        //    set{
+        //        bonus = value+1;
+        //    }
+        //}
         //====================================================================
         //public Enemy()//Phuong thuc khoi tao khong co gia tri
         //{

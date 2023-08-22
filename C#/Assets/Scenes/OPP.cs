@@ -1,4 +1,5 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -165,9 +166,9 @@ public class OPP : MonoBehaviour
 
     //    public Weapon() { }
 
-    //    public Weapon(string name,float distance, float damage)
+    //    public Weapon(string name, float distance, float damage)
     //    {
-    //        this.name = name;   
+    //        this.name = name;
     //        this.distance = distance;
     //        this.damage = damage;
     //        Debug.Log($"{this.name}");
@@ -188,7 +189,7 @@ public class OPP : MonoBehaviour
 
     //public class sword : Weapon
     //{
-    //    public sword(string name,float distance, float damage):base(name, distance, damage)
+    //    public sword(string name, float distance, float damage) : base(name, distance, damage)
     //    {
     //        this.name = name;
     //        this.distance = distance;
@@ -204,23 +205,26 @@ public class OPP : MonoBehaviour
     //    }
     //}
     //==============================Bai Tap3=======================
-    public  class Ball
+    interface ISuperBall
     {
-        protected string name;
+        public float TinhChuVi();
+    }
+    public  class Ball//Khong truu tuong
+    //public abstract  class Ball //
+    {
         protected string color;
+        static float gravity = 5;
         protected float size;
-        protected float speed;
-        //float gravity = 5;
-
         public Ball() { }
 
-        public Ball( string name_value,string color_value)
-        {
-            this.name = name_value; 
-            this.name = color_value; 
+        public Ball(string color_value, float size_value)
+        { 
+            this.color = color_value;
+            this.size = size_value;
+            //Debug.Log($"Bong: {this.color}, Co trong luc: {this.gravity}");
         }
-
-        public virtual string Move(string speed)
+        //Khong truu truong
+        public virtual string Move()
         {
             return "Di chuyen bay len";
         }
@@ -228,22 +232,67 @@ public class OPP : MonoBehaviour
         {
             return "Toc do mac dinh";
         }
+        //============================
+        //truu truong
+        //public abstract void Move();
+        //public abstract void Speed();
+        //============================
     }
-    public class Tenis:Ball
+    public class Green : Ball, ISuperBall
     {
-        public Tenis(string name_value, string color_value) : base(name_value, color_value)
+        public float _size {  get; set; }
+        public Green( string color_value, float size_value) : base( color_value, size_value)
         {
-            this.name = name_value;
-            this.name = color_value;
+            this.color = color_value;
+            this.size = size_value;
+            //Debug.Log($"Bong: {this.color}, Co trong luc: {this.gravity}");
         }
-        public override string Move(string speed)
+        //Khong truu truong
+        public override string Move()
         {
-            return "Tan cong chem ve phia truoc";
+            return "Di chuyen ve phia truoc";
         }
-    }
-    public class Volley:Ball
-    {
+        public override string Speed()
+        {
+            return "Toc do 2km/h";
+        }
 
+        public float TinhChuVi()
+        {
+            return ((float)(this.size * Math.PI));
+        }
+        //============================
+        //truu truong
+        //public override void Move()
+        //{
+        //    Debug.Log($"Di chuyen ve phia truoc");
+        //}
+        //public override void Speed()
+        //{
+        //    Debug.Log($"Toc do 2km/h");
+        //}
+        //============================
+    }
+    public class Red:Ball
+    {
+        public Red( string color_value,float size_value) : base( color_value, size_value)
+        {
+            this.color = color_value;
+            this.size = size_value;
+            //Debug.Log($"Bong: {this.color}, Co trong luc: {this.gravity}");
+        }
+        public override string Move()
+        //public override void Move()
+        {
+            //Debug.Log($"Di chuyen nhay ve phia truoc");
+            return "Di chuyen nhay ve phia truoc";
+        }
+        public override string Speed()
+        //public override void Speed()
+        {
+            //Debug.Log($"Toc do 5km/h");
+            return "Toc do 5km/h";
+        }
     }
 
     void Start()
@@ -255,15 +304,54 @@ public class OPP : MonoBehaviour
         //Animal ani = new Cat("Meo");
         //Debug.Log($"{ani.Move()},{ani.Eat("eat")},{ani.Chatting()}");
         //=============Bai tap 2=======================
-        //Weapon weapon = new Weapon("Vu khi",20,30);
+        //Weapon weapon = new Weapon("Vu khi", 20, 30);
         //weapon.Attack();
 
         //Weapon sword = new sword("Kiem", 20, 30);
         //Debug.Log($"{sword.Attack_Basic()}");
         //==================Bai tap 3============================
 
-        Ball ball = new Ball("Bong","Xanh");
-        Debug.Log($"{ball.Move("bay lo lung")}");
-        
+        //Ball ball = new Ball("Vang");
+        //Debug.Log($"{ball.Move()}");
+
+        //Ball red = new Red("Red");
+        //Debug.Log($"Cach di chuyen: {red.Move()}, Voi toc do: {red.Speed()}");
+
+
+        //Ball green = new Green("Green");
+        //Debug.Log($"Cach di chuyen: {green.Move()}, Voi toc do: {green.Speed()}");
+
+
+        //===============Khong Truu tuong============
+        //Ball ball = new Green("Green");
+        //ball.Move();
+        //ball.Speed();
+        //Ball bal = new Red("Red", 5);
+        //ball.Move();
+        //ball.Speed();
+        //===============Truu tuong============
+        //Green   ball_G = new Green("Green");
+        //        ball_G.Move();
+        //        ball_G.Speed();
+        //Red ball_R = new Red("Red");
+        //    ball_R.Move();
+        //    ball_R.Speed();
+        //=======Interface===========
+        ISuperBall superBall = new Green("Xanh",5);
+        Debug.Log($"Tinh chu vi: {superBall.TinhChuVi()}");
     }
 }
+
+
+
+
+////=======Tổng kết======================
+//    Abstrack:
+//        - Có thể định nghĩa thuộc tính.
+//    Interface: 
+//        - Chỉ định nghĩa phương thức.
+//        - Giải pháp cho đa kế thừa nếu cần.
+//    //Điểm chung: Dùng để tạo khuôn mẫu cho các lớp kế thừa
+//========================================
+
+
